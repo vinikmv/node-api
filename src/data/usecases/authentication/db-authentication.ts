@@ -1,8 +1,11 @@
-import { Authentication, AuthenticationModel } from '../../../domain/usecases/authentication'
-import { LoadAccountByEmailRepository } from '../../protocols/db/load-account-by-email-repository'
-import { HashComparer } from '../../protocols/cryptography/hash-comparer'
-import { TokenGenerator } from '../../protocols/cryptography/token-generator'
-import { UpdateAccessTokenRepository } from '../../protocols/db/update-access-token-repository'
+import {
+  Authentication,
+  AuthenticationModel,
+  LoadAccountByEmailRepository,
+  HashComparer,
+  TokenGenerator,
+  UpdateAccessTokenRepository
+} from './db-authentication-protocols'
 
 export class DbAuthentication implements Authentication {
   private readonly loadAccountByEmailReposity: LoadAccountByEmailRepository
@@ -13,7 +16,8 @@ export class DbAuthentication implements Authentication {
   constructor (
     loadAccountByEmailReposity: LoadAccountByEmailRepository, hashComparer: HashComparer,
     tokenGenerator: TokenGenerator,
-    updateAccessTokenRepository: UpdateAccessTokenRepository) {
+    updateAccessTokenRepository: UpdateAccessTokenRepository
+  ) {
     this.loadAccountByEmailReposity = loadAccountByEmailReposity
     this.hashComparer = hashComparer
     this.tokenGenerator = tokenGenerator
