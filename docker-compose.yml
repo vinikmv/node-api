@@ -12,7 +12,11 @@ services:
     container_name: api-container
     restart: always
     build: .
+    command: npm run debug
     ports: 
       - "5050:5050"
+      - "9222:9222"
+    volumes: 
+      - ./package.json:/usr/src/clean-node-api/package.json    
 volumes: 
   data: {}

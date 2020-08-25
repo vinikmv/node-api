@@ -10,4 +10,6 @@ COPY . /usr/src/clean-node-api
 RUN npm run build
 
 EXPOSE 5050
-CMD [ "npm", "start" ]
+EXPOSE 9222
+# CMD [ "npm", "start" ]
+# CMD [ "npm", "run", "debug" ]
