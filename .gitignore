@@ -3,5 +3,5 @@ node_modules
 dist
 coverage
 data
-
+deprecated
 globalConfig.json
