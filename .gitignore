@@ -4,4 +4,7 @@ dist
 coverage
 data
 deprecated
+requirements/
+
 globalConfig.json
+readme.md
