@@ -1,4 +1,13 @@
 FROM node:12
 WORKDIR /usr/src/clean-node-api
-COPY ./package.json .
-RUN npm install --only=prod
+
+COPY package.json /usr/src/clean-node-api/
+
+RUN npm install
+
+COPY . /usr/src/clean-node-api
+
+RUN npm run build
+
+EXPOSE 5050
+CMD [ "npm", "start" ]
