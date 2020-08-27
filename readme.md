@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/vinikmv/node-api.svg?branch=master)](https://travis-ci.org/vinikmv/node-api)
+[![Coverage Status](https://coveralls.io/repos/github/vinikmv/node-api/badge.svg)](https://coveralls.io/github/vinikmv/node-api)
+
 # **Clean Node API**
 
 Essa API faz parte do treinamento do professor Rodrigo Manguinho (Mango) na Udemy.
