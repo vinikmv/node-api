@@ -19,7 +19,7 @@
   },
   "keywords": [],
   "author": "Vinícius",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.2.2",
     "@types/bcrypt": "^3.0.0",
