@@ -1,6 +1,18 @@
 import paths from './paths'
 import components from './components'
-import schemas from './schemas'
+import {
+  errorSchema,
+  loginParamsSchema,
+  signUpParamsSchema,
+  accountSchema,
+  surveyAnswerSchema,
+  surveySchema,
+  surveysSchema,
+  addSurveyParamsSchema,
+  saveSurveyParamsSchema,
+  surveyResultSchema,
+  surveyResultAnswerSchema
+} from './schemas/'
 
 export default {
   openapi: '3.0.0',
@@ -22,6 +34,18 @@ export default {
     name: 'Enquete'
   }],
   paths,
-  schemas,
+  schemas: {
+    account: accountSchema,
+    loginParams: loginParamsSchema,
+    signUpParams: signUpParamsSchema,
+    addSurveyParams: addSurveyParamsSchema,
+    error: errorSchema,
+    surveys: surveysSchema,
+    survey: surveySchema,
+    surveyAnswer: surveyAnswerSchema,
+    saveSurveyParams: saveSurveyParamsSchema,
+    surveyResult: surveyResultSchema,
+    surveyResultAnswer: surveyResultAnswerSchema
+  },
   components
 }
