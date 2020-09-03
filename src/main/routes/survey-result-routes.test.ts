@@ -75,17 +75,14 @@ describe('Survey Routes', () => {
     })
   })
 
-  describe('PUT /surveys/:surveyId/results', () => {
-    test('Should return 403 on save survey without accessToken', async () => {
+  describe('GET /surveys/:surveyId/results', () => {
+    test('Should return 403 on load survey result without accessToken', async () => {
       await request(app)
-        .put('/api/surveys/any_id/results')
-        .send({
-          answer: 'any_answer'
-        })
+        .get('/api/surveys/any_id/results')
         .expect(403)
     })
 
-    test('Should return 200 on save survey with accessToken', async () => {
+    test('Should return 200 on load survey with accessToken', async () => {
       const accessToken = await makeAccessToken()
       const res = await surveyCollection.insertOne({
         question: 'Question',
@@ -99,20 +96,9 @@ describe('Survey Routes', () => {
       })
       const id: string = res.ops[0]._id
       await request(app)
-        .put(`/api/surveys/${id}/results`)
+        .get(`/api/surveys/${id}/results`)
         .set('x-access-token', accessToken)
-        .send({
-          answer: 'Answer 1'
-        })
         .expect(200)
-    })
-  })
-
-  describe('GET /surveys/:surveyId/results', () => {
-    test('Should return 403 on load survey result without accessToken', async () => {
-      await request(app)
-        .get('/api/surveys/any_id/results')
-        .expect(403)
     })
   })
 })
